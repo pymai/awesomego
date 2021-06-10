@@ -30,7 +30,7 @@ func main() {
 	//fmt.Println("Hello World!")
 
 	// 创建 json 文件
-	//ijson.WriteJson()
+	ijson.WriteJson()
 
 	// 读取 json 文件
 	//log.Fatalln("读取 json 文件") // 输出信息，并且 "with exit code 1"

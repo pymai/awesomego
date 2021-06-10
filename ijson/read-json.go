@@ -33,4 +33,22 @@ func ReadJson() {
 		fmt.Println("解码成功")
 		fmt.Println(info)
 	}
+
+	filePtr1, err := os.Open(path + "/ijson/user.json")
+	if err != nil {
+		// 文件打开失败 open /Users/khmai/awesomego/ijson/info.json: no such file or directory
+		fmt.Println("文件打开失败", err.Error())
+		return
+	}
+	defer filePtr1.Close()
+	var user []Person
+	// 创建 json 解码器
+	decoder1 := json.NewDecoder(filePtr1)
+	err = decoder1.Decode(&user)
+	if err != nil {
+		fmt.Println("解码失败", err.Error())
+	} else {
+		fmt.Println("解码成功")
+		fmt.Println(user)
+	}
 }

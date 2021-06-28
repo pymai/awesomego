@@ -57,4 +57,6 @@ func main() {
 	// <-c: channel 等待 c 的值，所以 main() 阻塞了
 	// 等 go 匿名函数运行到 c <- true，channel 拿到了 true 的值，才不阻塞，main() 就退出了
 	<-c
+
+	ijson.StructToJson()
 }

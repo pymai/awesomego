@@ -59,4 +59,6 @@ func main() {
 	<-c
 
 	ijson.StructToJson()
+
+	ijson.StructToJsonCustom()
 }

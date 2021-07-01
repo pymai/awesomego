@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/pymai/awesomego/ijson"
+	"github.com/pymai/awesomego/istruct"
 )
 
 // init() 在 main 函数之前执行，可以用来初始化日志格式
@@ -61,4 +62,6 @@ func main() {
 	ijson.StructToJson()
 
 	ijson.StructToJsonCustom()
+
+	istruct.CompositionStruct()
 }

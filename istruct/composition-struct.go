@@ -18,6 +18,15 @@ type SystemOperationSkill struct {
 	EducationBackground string
 }
 
+func (s SystemOperationSkill) rm() string {
+	return "rm -rf"
+}
+
+// 结构体接口转发
+func (o Operations) rm() string {
+	return o.Skill.rm()
+}
+
 func CompositionStruct() {
 	ops := SystemOperationEngineer{
 		Name:          "foo",
@@ -28,6 +37,9 @@ func CompositionStruct() {
 		ProfessionalSkill:   "Linux Golang",
 		EducationBackground: "University Degree",
 	}
+	// 结构体初始化后，就可以调用结构体的方法
+	null := skill.rm()
+	fmt.Println(null)
 
 	foobar := Operations{
 		Engineer: ops,
@@ -37,5 +49,6 @@ func CompositionStruct() {
 	fmt.Printf("%+v\n", foobar.Engineer)
 	fmt.Printf("%+v\n", foobar.Skill)
 	fmt.Println(foobar)
+	fmt.Println(foobar.rm())
 
 }

@@ -7,6 +7,14 @@ type Operations struct {
 	Skill    SystemOperationSkill
 }
 
+type Sre struct {
+	// struct 嵌入
+	// 这样就可以直接调用 SystemOperationSkill 的 rm() 方法
+	// 也可以直接访问 SystemOperationEngineer 的 Name 成员
+	SystemOperationEngineer
+	SystemOperationSkill
+}
+
 type SystemOperationEngineer struct {
 	Name          string
 	Age           int64
@@ -51,4 +59,8 @@ func CompositionStruct() {
 	fmt.Println(foobar)
 	fmt.Println(foobar.rm())
 
+	// 通过 结构体嵌入 直接调用 "子结构体" 的方法
+	foo := Sre{ops, skill}
+	fmt.Println(foo.rm())
+	fmt.Println(foo.Name)
 }

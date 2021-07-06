@@ -5,6 +5,8 @@ import (
 	"log"
 	"os"
 
+	"github.com/pymai/awesomego/ipointer"
+
 	"github.com/pymai/awesomego/ijson"
 	"github.com/pymai/awesomego/istruct"
 )
@@ -78,4 +80,6 @@ func main() {
 	name = ptrVar
 	fmt.Println(name)
 	fmt.Println(*name)
+
+	ipointer.PointerStruct()
 }

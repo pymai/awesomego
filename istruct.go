@@ -7,4 +7,5 @@ func main() {
 	istruct.CatStruct()
 	istruct.DogStruct()
 	istruct.ValueStruct()
+	istruct.VarStruct()
 }

@@ -8,4 +8,5 @@ func main() {
 	istruct.DogStruct()
 	istruct.ValueStruct()
 	istruct.VarStruct()
+	istruct.PointerStruct()
 }
